@@ -59,8 +59,25 @@ require_once "init.php";
                 <button class="btn btn-flat" id="search-btn" name="search">
 	                <i class="fa fa-search"></i>
                 </button>
+
               </span>
 				</div>
+
+            <div class="form-group">
+                <div class="radio">
+                    <label>
+                        <input type="radio" checked="" value="1" id="optionsRadios1" name="optionsRadios">
+                        Price: low to high
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="0" id="optionsRadios2" name="optionsRadios">
+                        Price: high to low
+                       </label>
+                </div>
+
+            </div>
 			<!--</form>-->
 
 		</div>
@@ -93,7 +110,7 @@ require_once "init.php";
 
 
 			</div>
-
+            <div class="alert alert-danger fade in" style="display: none" id="errorbox"><strong> Oops! </strong> Sorry no result was found </div>
 
 
 		</div>
