@@ -14,8 +14,8 @@ class Scraper {
 	private $searchString;
 	private $rawWebData;
 	private $error = false;
-//	const URL = "http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=";
-	const URL = "http://www.livescore.com/soccer/england/";
+	const URL = "http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=";
+//	const URL = "http://www.livescore.com/soccer/england/";
 
 	function __construct($searchString)
 	{
@@ -33,8 +33,8 @@ class Scraper {
 	public function connection()
 	{
 		$curly = curl_init();
-//		curl_setopt($curly, CURLOPT_URL,self::URL.$this->searchString);
-		curl_setopt($curly, CURLOPT_URL,self::URL);
+		curl_setopt($curly, CURLOPT_URL,self::URL.$this->searchString);
+//		curl_setopt($curly, CURLOPT_URL,self::URL);
 		curl_setopt($curly, CURLOPT_HEADER, 0);
 		curl_setopt($curly, CURLOPT_TIMEOUT, 120);
 		curl_setopt($curly, CURLOPT_RETURNTRANSFER, true);
@@ -64,13 +64,15 @@ class Scraper {
 
 //			$tableRows  = $xpath->query('//div');
 //			$tableRows  = $xpath->query("//body[@class='soccer narrow']");
-			$tableRows  = $xpath->query("//div[@class='wrapper']");
+			$tableRows  = $xpath->query("//div[@class='s-item-container']");
 			$scores = array();
 //			var_dump($tableRows);exit;
 
 			foreach ($tableRows as $row) {
 
-				print_r($row);exit;
+				print_r($row);
+				exit;
+
 				// fetch all 'td' inside this 'tr'
 				$td = $xpath->query('td', $row);
 				// we'll store information about each match in this array
@@ -86,7 +88,6 @@ class Scraper {
 					/* ... */
 				}
 			}
-
 
 
 
