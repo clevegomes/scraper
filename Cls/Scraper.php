@@ -56,37 +56,19 @@ class Scraper {
 		{
 
 			$dom = new \DOMDocument();
-//			$page = file_get_contents(self::URL.$this->searchString);
-//			print_r($page);exit;
+
 			@$dom->loadHTML($this->rawWebData);
-//			$dom->loadHTML($page);
 			$xpath = new \DOMXPath($dom);
 
-//			$tableRows  = $xpath->query('//div');
-//			$tableRows  = $xpath->query("//body[@class='soccer narrow']");
 			$tableRows  = $xpath->query("//div[@class='s-item-container']");
-			$scores = array();
-//			var_dump($tableRows);exit;
+
 
 			foreach ($tableRows as $row) {
 
-				print_r($row);
-				exit;
 
-				// fetch all 'td' inside this 'tr'
-				$td = $xpath->query('td', $row);
-				// we'll store information about each match in this array
-				$match = array();
+				$this->parsing($row);
 
-				if ($td->length == 1 && $xpath->query('td/b', $row)->length == 1) {
-					$league = substr($xpath->query('td/text()', $row)->item(1)->textContent, 3);
-					$scores[$league] = array();
 
-				} elseif ($td->length == 2) { // date
-					/* ... */
-				} elseif ($td->length == 4) { // match result
-					/* ... */
-				}
 			}
 
 
@@ -96,9 +78,25 @@ class Scraper {
 	}
 
 
-	public function parsing  ()
+	public function parsing ($xpathContent)
 	{
 
+
+		print_r($xpathContent);exit;
+//		// fetch all 'td' inside this 'tr'
+//		$td = $xpath->query('td', $row);
+//		// we'll store information about each match in this array
+//		$match = array();
+//
+//		if ($td->length == 1 && $xpath->query('td/b', $row)->length == 1) {
+//			$league = substr($xpath->query('td/text()', $row)->item(1)->textContent, 3);
+//			$scores[$league] = array();
+//
+//		} elseif ($td->length == 2) { // date
+//			/* ... */
+//		} elseif ($td->length == 4) { // match result
+//			/* ... */
+//		}
 	}
 
 	public function sorting ()
