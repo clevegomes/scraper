@@ -6,7 +6,7 @@ $searchString = $_GET["searchString"];
 $order = $_GET["order"];
 
 
-$scraperObj = new \Cls\Scraper($searchString);
+$scraperObj = new Scraper($searchString);
 
 $scraperObj->sorting($order);
 echo $scraperObj->getItemArry();
