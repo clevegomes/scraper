@@ -29,9 +29,9 @@ class Scraper {
 
 
 		$this->connection();
-//
-//		$this->scrapping();
-//        $this->parsing();
+
+		$this->scrapping();
+        $this->parsing();
 
 
 
