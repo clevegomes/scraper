@@ -27,6 +27,7 @@ class Scraper {
 	{
 		$this->searchString = $searchString;
 
+        
 		$this->connection();
 //
 //		$this->scrapping();
