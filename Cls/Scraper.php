@@ -53,18 +53,18 @@ class Scraper {
      */
 	public function connection()
 	{
-//		$curly = curl_init();
-//		curl_setopt($curly, CURLOPT_URL,self::URL.$this->searchString);
-//		curl_setopt($curly, CURLOPT_HEADER, 0);
-//		curl_setopt($curly, CURLOPT_TIMEOUT, 120);
-//		curl_setopt($curly, CURLOPT_RETURNTRANSFER, true);
-//
-//		$this->rawWebData = curl_exec($curly);
-//		$errorString = curl_error($curly);
-//		if(strlen($errorString)>0)
-//			$this->error = true;
-//
-//		curl_close($curly);
+		$curly = curl_init();
+		curl_setopt($curly, CURLOPT_URL,self::URL.$this->searchString);
+		curl_setopt($curly, CURLOPT_HEADER, 0);
+		curl_setopt($curly, CURLOPT_TIMEOUT, 120);
+		curl_setopt($curly, CURLOPT_RETURNTRANSFER, true);
+
+		$this->rawWebData = curl_exec($curly);
+		$errorString = curl_error($curly);
+		if(strlen($errorString)>0)
+			$this->error = true;
+
+		curl_close($curly);
 
 	}
 
