@@ -7,9 +7,8 @@ $order = $_GET["order"];
 
 
 $scraperObj = new \Cls\Scraper($searchString);
-echo "working2";
-return;
-
+echo $searchString;
+exit;
 $scraperObj->sorting($order);
 echo $scraperObj->getItemArry();
 
