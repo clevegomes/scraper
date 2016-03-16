@@ -25,12 +25,12 @@ class Scraper {
  */
 	function __construct($searchString)
 	{
-//		$this->searchString = $searchString;
-//
-//		$this->connection();
-//
-//		$this->scrapping();
-//        $this->parsing();
+		$this->searchString = $searchString;
+
+		$this->connection();
+
+		$this->scrapping();
+        $this->parsing();
 
 
 
