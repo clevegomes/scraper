@@ -8,8 +8,8 @@ $order = $_GET["order"];
 
 $scraperObj = new Scraper($searchString);
 
-$scraperObj->sorting($order);
-echo $scraperObj->getItemArry();
+//$scraperObj->sorting($order);
+//echo $scraperObj->getItemArry();
 
 
 ?>
