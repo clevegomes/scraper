@@ -27,6 +27,8 @@ class Scraper {
 	function __construct($searchString)
 	{
 		$this->searchString = $searchString;
+        echo "test4";
+        exit;
 
 		$this->connection();
 
