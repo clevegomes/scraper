@@ -1,5 +1,6 @@
 <?php
-
+echo "working";
+return;
 
 require_once "init.php";
 $searchString = $_GET["searchString"];
