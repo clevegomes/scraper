@@ -2,7 +2,6 @@
 /**
  * Created by PhpStorm.
  * User: Developer1
- * Date: 17/11/2015
  * Time: 5:24 PM
  */
 
@@ -27,8 +26,6 @@ class Scraper {
 	function __construct($searchString)
 	{
 		$this->searchString = $searchString;
-        echo "test4";
-        exit;
 
 		$this->connection();
 
